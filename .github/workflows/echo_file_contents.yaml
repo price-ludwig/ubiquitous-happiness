@@ -11,6 +11,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - name: List files in the repository
+      - name: Spit out file contents
         run: |
-          ls ${{ github.workspace }}
+          cat main_branch.txt
