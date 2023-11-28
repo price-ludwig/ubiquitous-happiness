@@ -16,6 +16,7 @@ jobs:
           ref: production
           token: ${{ secrets.PAT }}
       - run: |
+          git fetch
           git reset --hard ${{ github.event.client_payload.gitRef }}
           git push --force
   
