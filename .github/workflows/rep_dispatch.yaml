@@ -12,8 +12,9 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out production code
         uses: actions/checkout@v4
+        with:
+          ref: production
       - run: |
-          git checkout production
           git merge ${{ github.event.client_payload.gitRef }}
           git push
   
