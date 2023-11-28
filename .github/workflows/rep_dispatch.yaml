@@ -15,6 +15,6 @@ jobs:
         with:
           ref: production
       - run: |
-          git merge ${{ github.event.client_payload.gitRef }}
-          git push
+          git reset --hard ${{ github.event.client_payload.gitRef }}
+          git push --force
   
